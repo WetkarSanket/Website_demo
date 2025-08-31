@@ -195,6 +195,16 @@ function handleClaimSubmission(e) {
     claims.push(newClaim);
     saveClaimsToStorage();
     
+    // Send context to Genesys if available
+    if (typeof genesysIntegration !== 'undefined') {
+        genesysIntegration.sendFormContext('claim-submission', {
+            claimId: claimId,
+            policyType: formData.type,
+            claimAmount: formData.amount,
+            priority: formData.priority
+        });
+    }
+    
     // Show success message
     showClaimSuccessMessage(claimId);
     
@@ -262,12 +272,20 @@ function generateClaimId() {
 }
 
 function showClaimSuccessMessage(claimId) {
+    const chatButton = (typeof GenesysMessenger !== 'undefined') 
+        ? `<button class="btn btn-primary" onclick="GenesysMessenger.openMessenger({trigger: 'claim-submitted', userData: {claimId: '${claimId}'}})">💬 Chat with Support</button>`
+        : '';
+    
     const message = `
         <div class="message success">
             <h3>Claim Submitted Successfully!</h3>
             <p><strong>Claim Number:</strong> ${claimId}</p>
             <p>Your claim has been submitted and is being reviewed. You can track its progress on the <a href="track-claims.html">Track Claims</a> page.</p>
             <p>We'll contact you within 24-48 hours with next steps.</p>
+            <div style="margin-top: 15px;">
+                ${chatButton}
+                <p style="font-size: 0.9rem; margin-top: 10px; color: #666;">Need immediate assistance? Our support team is ready to help!</p>
+            </div>
         </div>
     `;
     
@@ -293,6 +311,16 @@ function handleContactSubmission(e) {
     
     // Generate ticket ID
     const ticketId = generateTicketId();
+    
+    // Send context to Genesys if available
+    if (typeof genesysIntegration !== 'undefined') {
+        genesysIntegration.sendFormContext('contact-form', {
+            ticketId: ticketId,
+            inquiryType: formData.inquiryType,
+            priority: formData.priority,
+            subject: formData.subject
+        });
+    }
     
     // Show success message
     showContactSuccessMessage(ticketId);
@@ -566,11 +594,42 @@ function viewClaimDetails(claimId) {
 }
 
 function contactSupport(claimId) {
-    showMessage(`Contacting support about claim ${claimId}. This would typically open a support chat or redirect to a contact form.`, 'info');
+    // Use Genesys Messenger if available
+    if (typeof GenesysMessenger !== 'undefined') {
+        GenesysMessenger.openMessenger({
+            trigger: 'claim-support',
+            userData: {
+                claimId: claimId,
+                page: 'track-claims',
+                intent: 'claim-assistance'
+            }
+        });
+    } else {
+        showMessage(`Opening support chat for claim ${claimId}...`, 'info');
+    }
 }
 
 function startLiveChat() {
-    showMessage('Live chat feature would be integrated here. For now, please use our contact form or call us directly.', 'info');
+    // Use Genesys Messenger if available, otherwise show fallback
+    if (typeof GenesysMessenger !== 'undefined') {
+        GenesysMessenger.openMessenger({
+            trigger: 'legacy-chat-button',
+            userData: {
+                source: 'startLiveChat-function',
+                page: window.location.pathname
+            }
+        });
+    } else {
+        showMessage('Live chat is loading... Please wait a moment and try again.', 'info');
+        // Try again in 2 seconds if Genesys hasn't loaded yet
+        setTimeout(() => {
+            if (typeof GenesysMessenger !== 'undefined') {
+                GenesysMessenger.openMessenger({
+                    trigger: 'delayed-chat-button'
+                });
+            }
+        }, 2000);
+    }
 }
 
 // Mobile menu functionality
