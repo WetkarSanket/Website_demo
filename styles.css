@@ -491,6 +491,44 @@ body {
 }
 
 /* Contact Page */
+.live-chat-cta {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.chat-highlight {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
+    margin-bottom: 40px;
+}
+
+.chat-highlight h2 {
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.chat-highlight p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    opacity: 0.95;
+}
+
+.btn-large {
+    padding: 18px 40px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-large:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;

@@ -5,6 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - SecureLife Insurance</title>
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Genesys Cloud Messenger SDK -->
+    <script type="text/javascript" charset="utf-8">
+      (function (g, e, n, es, ys) {
+        g['_genesysJs'] = e;
+        g[e] = g[e] || function () {
+          (g[e].q = g[e].q || []).push(arguments)
+        };
+        g[e].t = 1 * new Date();
+        g[e].c = es;
+        ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
+      })(window, 'Genesys', 'https://apps.euw2.pure.cloud/genesys-bootstrap/genesys.min.js', {
+        environment: 'prod-euw2',
+        deploymentId: '7953b9f3-bac3-4b1d-95e4-9d489c49af26'
+      });
+    </script>
+    
+    <!-- Genesys Journey Tracking -->
+    <script type="text/javascript" charset="utf-8">
+      Genesys("subscribe", "Journey.ready", function() {
+        setTimeout(function () {
+          let pathname = window.location.pathname;
+          if (!pathname || pathname == "/") {
+            pathname = "/home";
+          }
+          let segments = pathname.split('/').filter(Boolean);
+          pathname = "/" + segments[segments.length - 1];
+
+          Genesys("command", "Journey.pageview", {
+            pageTitle: pathname
+          });
+        });
+      });
+    </script>
 </head>
 <body>
     <header>
@@ -33,6 +67,17 @@
         <div class="container">
             <h1>Contact Us</h1>
             <p>We're here to help! Reach out to us with any questions or concerns.</p>
+            
+            <!-- Live Chat CTA -->
+            <div class="live-chat-cta">
+                <div class="chat-highlight">
+                    <h2>💬 Get Instant Help</h2>
+                    <p>Chat with our support agents in real-time. Available 24/7 for claims and Mon-Fri 8AM-8PM for general inquiries.</p>
+                    <button class="btn btn-primary btn-large start-chat" onclick="GenesysMessenger.openMessenger({trigger: 'contact-page-cta'})">
+                        Start Live Chat Now
+                    </button>
+                </div>
+            </div>
 
             <div class="contact-content">
                 <div class="contact-info">
@@ -70,7 +115,7 @@
                     <div class="contact-method">
                         <h3>💬 Live Chat</h3>
                         <p>Available on our website Monday-Friday, 9AM-6PM EST</p>
-                        <button class="btn btn-primary" onclick="startLiveChat()">Start Live Chat</button>
+                        <button class="btn btn-primary" onclick="GenesysMessenger.openMessenger({trigger: 'contact-method-section'})">Start Live Chat</button>
                     </div>
                 </div>
 
@@ -259,5 +304,6 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="genesys-integration.js"></script>
 </body>
 </html>
