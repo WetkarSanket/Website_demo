@@ -1,0 +1,48 @@
+{
+  "numStartups": 1,
+  "installMethod": "unknown",
+  "autoUpdates": true,
+  "cachedStatsigGates": {
+    "tengu_disable_bypass_permissions_mode": false
+  },
+  "firstStartTime": "2025-08-30T16:37:49.544Z",
+  "userID": "62e4c7ea423a0daca80804bb27b2738bd3deda12be2af3844e61c1f76cde63f7",
+  "projects": {
+    "/home/sannket": {
+      "allowedTools": [],
+      "history": [
+        {
+          "display": "i want this website to be accesible via open internet since i need to use this website in Genesys cloud Webmessaging Integration",
+          "pastedContents": {}
+        },
+        {
+          "display": "i want to create a dummy insurance website to be used by the customers for raising claims or for existing claims or other querirs",
+          "pastedContents": {}
+        }
+      ],
+      "mcpContextUris": [],
+      "mcpServers": {},
+      "enabledMcpjsonServers": [],
+      "disabledMcpjsonServers": [],
+      "hasTrustDialogAccepted": false,
+      "projectOnboardingSeenCount": 1,
+      "hasClaudeMdExternalIncludesApproved": false,
+      "hasClaudeMdExternalIncludesWarningShown": false
+    }
+  },
+  "oauthAccount": {
+    "accountUuid": "fec923c8-a43b-4963-82c6-6acbb2d80fc2",
+    "emailAddress": "sanket.wetkar007@gmail.com",
+    "organizationUuid": "28c6efb2-10f9-4e35-a753-c1a8bd28436c",
+    "organizationRole": "admin",
+    "workspaceRole": null,
+    "organizationName": "sanket.wetkar007@gmail.com's Organization"
+  },
+  "claudeCodeFirstTokenDate": "2025-08-30T16:40:02.945786Z",
+  "hasCompletedOnboarding": true,
+  "lastOnboardingVersion": "1.0.98",
+  "hasOpusPlanDefault": false,
+  "subscriptionNoticeCount": 0,
+  "hasAvailableSubscription": false,
+  "fallbackAvailableWarningThreshold": 0.5
+}

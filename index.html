@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SecureLife Insurance - Submit claims, track status, and get support for auto, home, health, and life insurance policies.">
+    <meta name="keywords" content="insurance, claims, auto insurance, home insurance, health insurance, life insurance, customer support">
+    <meta name="author" content="SecureLife Insurance">
+    <title>SecureLife Insurance - Your Protection Partner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h2>SecureLife Insurance</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="submit-claim.html" class="nav-link">Submit Claim</a></li>
+                    <li><a href="track-claims.html" class="nav-link">Track Claims</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                    <li><a href="#" class="nav-link login-btn" onclick="showLoginModal()">Login</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Protecting What Matters Most</h1>
+                <p>Comprehensive insurance coverage with fast, reliable claim processing</p>
+                <div class="hero-buttons">
+                    <a href="submit-claim.html" class="btn btn-primary">File a Claim</a>
+                    <a href="track-claims.html" class="btn btn-secondary">Track Your Claims</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Auto Insurance</h3>
+                        <p>Comprehensive coverage for your vehicle with 24/7 roadside assistance.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Home Insurance</h3>
+                        <p>Protect your home and belongings with our comprehensive home insurance plans.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Health Insurance</h3>
+                        <p>Medical coverage that keeps you and your family healthy and secure.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Life Insurance</h3>
+                        <p>Financial security for your loved ones when they need it most.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-actions">
+            <div class="container">
+                <h2>Quick Actions</h2>
+                <div class="actions-grid">
+                    <a href="submit-claim.html" class="action-card">
+                        <h3>Submit New Claim</h3>
+                        <p>File a new insurance claim quickly and easily</p>
+                    </a>
+                    <a href="track-claims.html" class="action-card">
+                        <h3>Check Claim Status</h3>
+                        <p>Track the progress of your existing claims</p>
+                    </a>
+                    <a href="contact.html" class="action-card">
+                        <h3>Contact Support</h3>
+                        <p>Get help with questions or concerns</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SecureLife Insurance</h3>
+                    <p>Your trusted insurance partner since 1995</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="submit-claim.html">Submit Claim</a></li>
+                        <li><a href="track-claims.html">Track Claims</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📞 1-800-SECURE-1</p>
+                    <p>📧 support@securelife.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SecureLife Insurance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Customer Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <p class="demo-note">Demo: Use any email/password combination</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

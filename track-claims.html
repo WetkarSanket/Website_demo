@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Claims - SecureLife Insurance</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h2>SecureLife Insurance</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="submit-claim.html" class="nav-link">Submit Claim</a></li>
+                    <li><a href="track-claims.html" class="nav-link active">Track Claims</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                    <li><a href="#" class="nav-link login-btn" onclick="showLoginModal()">Login</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="track-page">
+        <div class="container">
+            <h1>Track Your Claims</h1>
+            <p>Enter your claim number or policy information to view the status of your claims.</p>
+
+            <div class="search-section">
+                <div class="search-form">
+                    <div class="form-group">
+                        <label for="searchType">Search By:</label>
+                        <select id="searchType">
+                            <option value="claim">Claim Number</option>
+                            <option value="policy">Policy Number</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="searchValue">Enter Number:</label>
+                        <input type="text" id="searchValue" placeholder="e.g., CLM-2024-001234">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="searchClaims()">Search Claims</button>
+                </div>
+            </div>
+
+            <div id="claimsResults" class="claims-results">
+                <!-- Demo claims will be populated here -->
+                <div class="claims-list">
+                    <h2>Your Recent Claims</h2>
+                    <div class="claim-card">
+                        <div class="claim-header">
+                            <div class="claim-info">
+                                <h3>Claim #CLM-2024-001234</h3>
+                                <span class="claim-type">Auto Insurance</span>
+                            </div>
+                            <div class="claim-status status-in-progress">In Review</div>
+                        </div>
+                        <div class="claim-details">
+                            <div class="claim-detail">
+                                <strong>Date Filed:</strong> March 15, 2024
+                            </div>
+                            <div class="claim-detail">
+                                <strong>Incident Date:</strong> March 10, 2024
+                            </div>
+                            <div class="claim-detail">
+                                <strong>Claim Amount:</strong> $3,500.00
+                            </div>
+                            <div class="claim-detail">
+                                <strong>Description:</strong> Rear-end collision at intersection
+                            </div>
+                        </div>
+                        <div class="claim-progress">
+                            <h4>Claim Progress</h4>
+                            <div class="progress-steps">
+                                <div class="step completed">
+                                    <div class="step-number">1</div>
+                                    <div class="step-title">Claim Submitted</div>
+                                </div>
+                                <div class="step completed">
+                                    <div class="step-number">2</div>
+                                    <div class="step-title">Initial Review</div>
+                                </div>
+                                <div class="step active">
+                                    <div class="step-number">3</div>
+                                    <div class="step-title">Investigation</div>
+                                </div>
+                                <div class="step pending">
+                                    <div class="step-number">4</div>
+                                    <div class="step-title">Settlement</div>
+                                </div>
+                                <div class="step pending">
+                                    <div class="step-number">5</div>
+                                    <div class="step-title">Payment</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="claim-actions">
+                            <button class="btn btn-secondary">View Details</button>
+                            <button class="btn btn-outline">Upload Documents</button>
+                        </div>
+                    </div>
+
+                    <div class="claim-card">
+                        <div class="claim-header">
+                            <div class="claim-info">
+                                <h3>Claim #CLM-2024-000987</h3>
+                                <span class="claim-type">Home Insurance</span>
+                            </div>
+                            <div class="claim-status status-approved">Approved</div>
+                        </div>
+                        <div class="claim-details">
+                            <div class="claim-detail">
+                                <strong>Date Filed:</strong> February 28, 2024
+                            </div>
+                            <div class="claim-detail">
+                                <strong>Incident Date:</strong> February 25, 2024
+                            </div>
+                            <div class="claim-detail">
+                                <strong>Claim Amount:</strong> $1,250.00
+                            </div>
+                            <div class="claim-detail">
+                                <strong>Description:</strong> Water damage from burst pipe
+                            </div>
+                        </div>
+                        <div class="claim-progress">
+                            <h4>Claim Progress</h4>
+                            <div class="progress-steps">
+                                <div class="step completed">
+                                    <div class="step-number">1</div>
+                                    <div class="step-title">Claim Submitted</div>
+                                </div>
+                                <div class="step completed">
+                                    <div class="step-number">2</div>
+                                    <div class="step-title">Initial Review</div>
+                                </div>
+                                <div class="step completed">
+                                    <div class="step-number">3</div>
+                                    <div class="step-title">Investigation</div>
+                                </div>
+                                <div class="step completed">
+                                    <div class="step-number">4</div>
+                                    <div class="step-title">Settlement</div>
+                                </div>
+                                <div class="step completed">
+                                    <div class="step-number">5</div>
+                                    <div class="step-title">Payment Sent</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="claim-actions">
+                            <button class="btn btn-secondary">View Details</button>
+                            <button class="btn btn-outline">Download Receipt</button>
+                        </div>
+                    </div>
+
+                    <div class="claim-card">
+                        <div class="claim-header">
+                            <div class="claim-info">
+                                <h3>Claim #CLM-2024-000756</h3>
+                                <span class="claim-type">Health Insurance</span>
+                            </div>
+                            <div class="claim-status status-pending">Pending</div>
+                        </div>
+                        <div class="claim-details">
+                            <div class="claim-detail">
+                                <strong>Date Filed:</strong> March 20, 2024
+                            </div>
+                            <div class="claim-detail">
+                                <strong>Service Date:</strong> March 18, 2024
+                            </div>
+                            <div class="claim-detail">
+                                <strong>Claim Amount:</strong> $850.00
+                            </div>
+                            <div class="claim-detail">
+                                <strong>Description:</strong> Emergency room visit
+                            </div>
+                        </div>
+                        <div class="claim-progress">
+                            <h4>Claim Progress</h4>
+                            <div class="progress-steps">
+                                <div class="step completed">
+                                    <div class="step-number">1</div>
+                                    <div class="step-title">Claim Submitted</div>
+                                </div>
+                                <div class="step active">
+                                    <div class="step-number">2</div>
+                                    <div class="step-title">Initial Review</div>
+                                </div>
+                                <div class="step pending">
+                                    <div class="step-number">3</div>
+                                    <div class="step-title">Investigation</div>
+                                </div>
+                                <div class="step pending">
+                                    <div class="step-number">4</div>
+                                    <div class="step-title">Settlement</div>
+                                </div>
+                                <div class="step pending">
+                                    <div class="step-number">5</div>
+                                    <div class="step-title">Payment</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="claim-actions">
+                            <button class="btn btn-secondary">View Details</button>
+                            <button class="btn btn-outline">Contact Agent</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="help-section">
+                <h2>Need Help?</h2>
+                <div class="help-cards">
+                    <div class="help-card">
+                        <h3>Can't Find Your Claim?</h3>
+                        <p>If you're unable to locate your claim, please contact our customer support team.</p>
+                        <a href="contact.html" class="btn btn-outline">Contact Support</a>
+                    </div>
+                    <div class="help-card">
+                        <h3>Understanding Claim Status</h3>
+                        <ul>
+                            <li><strong>Pending:</strong> Claim has been received and is awaiting initial review</li>
+                            <li><strong>In Review:</strong> Claim is being investigated and processed</li>
+                            <li><strong>Approved:</strong> Claim has been approved and payment is being processed</li>
+                            <li><strong>Settled:</strong> Claim has been fully processed and closed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SecureLife Insurance</h3>
+                    <p>Your trusted insurance partner since 1995</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="submit-claim.html">Submit Claim</a></li>
+                        <li><a href="track-claims.html">Track Claims</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📞 1-800-SECURE-1</p>
+                    <p>📧 support@securelife.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SecureLife Insurance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Customer Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <p class="demo-note">Demo: Use any email/password combination</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
