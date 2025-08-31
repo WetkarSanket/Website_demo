@@ -5,7 +5,9 @@
   "tipsHistory": {
     "new-user-warmup": 1,
     "memory-command": 1,
-    "theme-command": 1
+    "theme-command": 1,
+    "status-line": 1,
+    "prompt-queue": 1
   },
   "cachedStatsigGates": {
     "tengu_disable_bypass_permissions_mode": false
@@ -16,6 +18,14 @@
     "/home/sannket": {
       "allowedTools": [],
       "history": [
+        {
+          "display": "I dont think the issue is with the configuration. When i copy the snippet & run it idependently i see the message.\nIt only when i run from website the first message doesn't show up & widgets loads indefinitely. I think the issue is with the Genesys commands being used to invoke the widget. I hope the new code fixs it ?\n",
+          "pastedContents": {}
+        },
+        {
+          "display": "The site works fine bit when i click on Messenger. The widget pops up but i never recieve a messge configured in Genesys Messenger flow mapped to Messenger Deplpyment.",
+          "pastedContents": {}
+        },
         {
           "display": "https://github.com/WetkarSanket/Website_demo is repo. Can you push the code at all places required ? ",
           "pastedContents": {}
